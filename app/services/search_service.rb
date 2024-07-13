@@ -11,7 +11,7 @@ class SearchService
     end
 
     def insert(query)
-      Search.where(query: query.downcase).first_or_create!
+      Search.insert_query(query)
     end
   end
 end

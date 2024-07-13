@@ -1,0 +1,8 @@
+<div class="trends" data-controller="trends">
+  <h2>Trending Searches</h2>
+  <ul data-turbo-stream="replace">
+    <% trends.each do |search| %>
+      <li><%= search.query %> (Count: <%= search.count %>)</li>
+    <% end %>
+  </ul>
+</div>
