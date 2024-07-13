@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
   root "searches#index"
   resources :articles
   resources :searches, only: [:new, :create, :index]

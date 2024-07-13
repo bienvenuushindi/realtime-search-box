@@ -1,0 +1,9 @@
+:concurrency: 3
+:queues:
+  - critical
+  - default
+:scheduler:
+  :schedule:
+    record_search:
+      every: '10s'
+      class: RecordSearchWorker
