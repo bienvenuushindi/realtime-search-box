@@ -3,7 +3,7 @@ class SearchesController < ApplicationController
     @searches = []
     if params_exist?
       @searches = Article.search(search_params)
-      SearchService.push_to_redis(REDIS, { ip: request.remote_ip, value: search_params })
+      SearchService.push_to_redis({ ip: request.remote_ip, value: search_params })
     end
     if turbo_frame_request?
       render partial: 'searches', locals: { searches: @searches, term: search_params }
