@@ -1,5 +1,6 @@
 class Search < ApplicationRecord
   validates :count, numericality: { greater_than_or_equal_to: 0 }
+
   def self.trends
     order(count: :desc).limit(10)
   end

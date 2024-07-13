@@ -7,3 +7,6 @@
     record_search:
       every: '10s'
       class: RecordSearchWorker
+    broadcast_trends:
+      every: '30s'
+      class: TrendsBroadcastWorker
