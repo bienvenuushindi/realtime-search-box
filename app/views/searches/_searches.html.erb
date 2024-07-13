@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "analytics" do %>
+  <% searches.each do |article| %>
+    <% if term.present? %>
+      <h2><%= highlight(article.title, term.split) %></h2>
+    <% end %>
+  <% end %>
+<% end %>
